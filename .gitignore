@@ -1,0 +1,14 @@
+
+.DS_Store
+.bash_history
+.cache/
+.local/
+.vscode
+.config/
+.python_history
+
+# secrets
+.env.development
+.env.testing
+.env.staging
+.env.production
