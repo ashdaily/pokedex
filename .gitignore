@@ -6,8 +6,10 @@
 .vscode
 .config/
 .python_history
+__pycache__/
 
-# secrets
+# environment variables (secrets included)
+.env.local
 .env.development
 .env.testing
 .env.staging

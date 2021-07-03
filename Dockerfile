@@ -37,9 +37,6 @@ RUN mkdir /pokemon
 ENV HOME=/pokemon
 WORKDIR $HOME
 COPY ./project $HOME/project
-COPY ./poetry.lock $HOME
-# COPY ./run_backend_tests.sh $HOME
-COPY ./pyproject.toml $HOME
 
 COPY ./.env.${TARGET_ENV} $HOME
 COPY ./docker-entrypoint.sh $HOME
@@ -48,9 +45,10 @@ ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 
 RUN pip3 install poetry
 RUN poetry config virtualenvs.create false
+WORKDIR $HOME/project
 RUN poetry install --no-interaction --no-ansi
 
-
+WORKDIR $HOME
 EXPOSE 8000
 RUN chmod +x docker-entrypoint.sh
 CMD ["./docker-entrypoint.sh"]

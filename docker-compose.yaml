@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+
+  pokemon_container:
+    image: pokemon_image
+    container_name: pokemon_container
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    command: ["./docker-entrypoint.sh"]
+    depends_on:
+      - pokemon_db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./project/:/pokemon/project/
+    stdin_open: true
+    tty: true
+
+  pokemon_db:
+    image: postgres
+    container_name: pokemon_db
+    expose:
+      - "5432"
+    env_file:
+        - ./.env.local
