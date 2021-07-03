@@ -13,11 +13,6 @@ class BasePokemonAPI:
         Filter english description
         Clean the string by removing escape sequences
         """
-        def _filter(x):
-            if flavor["language"]["name"] == "en":
-                return x["flavor_text"]
-            return None
-
         en_descriptions = list(
             map(
                 lambda x:x["flavor_text"] if x["language"]["name"] == "en" else None, 
