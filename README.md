@@ -23,6 +23,16 @@
 - Run test cases: 
   - `docker-compose run pokemon_container bash -c "cd project &&  python3 manage.py test --no-input"` 
 - Exec: `docker exec -it pokemon-container bash`
+- Call the API:
+  - Visit [localhost:5000/swagger](http://localhost:5000/swagger/) and try the APIs.
+  - Or, Use curl
+  ```
+  # get info for pokemon_name pikachu
+  curl -X GET "http://localhost:5000/pokemon/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
+
+  # get translated info for pokemon_name pikachu
+  curl -X GET "http://localhost:5000/pokemon/translated/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
+  ```
  
  
 ### You can keep the builds for local, development, testing, staging production seperate: 
