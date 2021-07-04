@@ -23,24 +23,26 @@ class BasePokemonAPI:
         return payload
 
     def _get_description(self, flavor_text_entries):
-        """
-        Filter english description
-        Clean the string by removing escape sequences
-        """
         if len(flavor_text_entries) == 0:
             return None
     
+        # get the first english translation in the list
         en_descriptions = list(
             map(
                 lambda x:x["flavor_text"] if x["language"]["name"] == "en" else None, 
                 flavor_text_entries
             )
         )
-        
-        en_descriptions = [' '.join(d.split()) for d in en_descriptions if d is not None]
-        en_descriptions = " ".join(en_descriptions)
-        en_descriptions = en_descriptions.replace("\xad ", "").replace("\xad", "")
-        return en_descriptions
+        for d in en_descriptions:
+            if d is not None:
+                en_description = d
+                break
+
+        # Clean the string by removing escape sequences
+        en_description = ' '.join(en_description.split())
+        en_description = en_description.replace("\xad ", "").replace("\xad", "")
+
+        return en_description
 
 
 class PokemonAPI(APIView, BasePokemonAPI):
