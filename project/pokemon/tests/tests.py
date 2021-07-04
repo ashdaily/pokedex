@@ -38,6 +38,22 @@ class TestPokemonAPI(TestCaseBaseClass):
                 )
                 self.assertEqual(r.status_code, 200)
 
+                # test if description has any escape sequences
+                description = r.json()["description"]
+                escape_sequences = (
+                    "\n",
+                    "\t",
+                    "\r", 
+                    "\b",
+                    "\\",
+                    "\`",
+                    "\a"
+                    "\f"
+                    "\xad"
+                )
+                for escape_sequence in escape_sequences:
+                    self.assertEqual(escape_sequence in description, False)
+
             # test if api can handle invalid pokemon names
             for pokemon_name in INVALID_POKEMON_NAMES_LIST:
                 url = reverse("pokemon-api", kwargs={"pokemon_name":pokemon_name})
