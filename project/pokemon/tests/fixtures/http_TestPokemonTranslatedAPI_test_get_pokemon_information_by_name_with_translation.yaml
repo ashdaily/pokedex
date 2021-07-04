@@ -1,0 +1,536 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.25.1
+    method: GET
+    uri: https://pokeapi.co/api/v2/pokemon-species/pikachu
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '50944'
+      CF-Cache-Status:
+      - HIT
+      CF-RAY:
+      - 669715078ea8fced-KIX
+      Cache-Control:
+      - public, max-age=86400, s-maxage=86400
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '13884'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 04 Jul 2021 08:46:16 GMT
+      Etag:
+      - W/"18b6f-Sk8R8pp80rY0gJW0YeKdA6xpWXY"
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Function-Execution-Id:
+      - kl1ipuqwg8gy
+      NEL:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v2?s=vpFyDN5EhwbJwkvyF7lBPPDfKTLg2gr7Ww53vn%2Bfux2A%2F%2FP206GvDvYYHF2SCuFm8fhwXhte%2FI2DdT27JKTt6GnZDX3EeuKAk1mSRjQxJ%2FdKFo3ZlzCt1g%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Vary:
+      - Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Cloud-Trace-Context:
+      - 9566306907e48526b3b9a60656fbba80
+      X-Country-Code:
+      - JP
+      X-Orig-Accept-Language:
+      - en-GB,en-US;q=0.9,en;q=0.8
+      X-Powered-By:
+      - Express
+      X-Served-By:
+      - cache-itm18846-ITM
+      X-Timer:
+      - S1625337433.964971,VS0,VE1
+      alt-svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443";
+        ma=86400
+    status:
+      code: 200
+      message: OK
+- request:
+    body: text=When+several+of+these+POK%C3%A9MON+gather%2C+their+electricity+could+build+and+cause+lightning+storms.+When+several+of+these+POK%C3%A9MON+gather%2C+their+electricity+could+build+and+cause+lightning+storms.+It+keeps+its+tail+raised+to+monitor+its+surroundings.+If+you+yank+its+tail%2C+it+will+try+to+bite+you.+This+intelligent+POK%C3%A9MON+roasts+hard+BERRIES+with+electricity+to+make+them+tender+enough+to+eat.+It+raises+its+tail+to+check+its+surroundings.+The+tail+is+sometimes+struck+by+lightning+in+this+pose.+When+it+is+angered%2C+it+immediately+discharges+the+energy+stored+in+the+pouches+in+its+cheeks.+Whenever+PIKACHU+comes+across+something+new%2C+it+blasts+it+with+a+jolt+of+electricity.+If+you+come+across+a+blackened+berry%2C+it%E2%80%99s+evidence+that+this+POK%C3%A9MON+mistook+the+intensity+of+its+charge.+This+POK%C3%A9MON+has+electricity-storing+pouches+on+its+cheeks.+These+appear+to+become+electrically+charged+during+the+night+while+PIKACHU+sleeps.+It+occasionally+discharges+electricity+when+it+is+dozy+after+waking+up.+It+stores+electricity+in+the+electric+sacs+on+its+cheeks.+When+it+releases+pent-up+energy+in+a+burst%2C+the+electric+power+is+equal+to+a+lightning+bolt.+It+has+small+electric+sacs+on+both+its+cheeks.+If+threatened%2C+it+looses+electric+charges+from+the+sacs.+When+several+of+these+POK%C3%A9MON+gather%2C+their+electricity+can+build+and+cause+lightning+storms.+It+lives+in+forests+with+others.+It+stores+electricity+in+the+pouches+on+its+cheeks.+If+it+looses+crackling+power+from+the+electric+pouches+on+its+cheeks%2C+it+is+being+wary.+It+occasionally+uses+an+electric+shock+to+recharge+a+fellow+PIKACHU+that+is+in+a+weakened+state.+This+intelligent+Pok%C3%A9mon+roasts+hard+berries+with+electricity+to+make+them+tender+enough+to+eat.+It+raises+its+tail+to+check+its+surroundings.+The+tail+is+sometimes+struck+by+lightning+in+this+pose.+It+occasionally+uses+an+electric+shock+to+recharge+a+fellow+Pikachu+that+is+in+a+weakened+state.+It+occasionally+uses+an+electric+shock+to+recharge+a+fellow+Pikachu+that+is+in+a+weakened+state.+It+occasionally+uses+an+electric+shock+to+recharge+a+fellow+Pikachu+that+is+in+a+weakened+state.+It+occasionally+uses+an+electric+shock+to+recharge+a+fellow+Pikachu+that+is+in+a+weakened+state.+It+raises+its+tail+to+check+its+surroundings.+The+tail+is+sometimes+struck+by+lightning+in+this+pose.+It+has+small+electric+sacs+on+both+its+cheeks.+If+threatened%2C+it+looses+electric+charges+from+the+sacs.+Whenever+Pikachu+comes+across+something+new%2C+it+blasts+it+with+a+jolt+of+electricity.+If+you+come+across+a+blackened+berry%2C+it%E2%80%99s+evidence+that+this+Pok%C3%A9mon+mistook+the+intensity+of+its+charge.+This+Pok%C3%A9mon+has+electricity-storing+pouches+on+its+cheeks.+These+appear+to+become+electrically+charged+during+the+night+while+Pikachu+sleeps.+It+occasionally+discharges+electricity+when+it+is+dozy+after+waking+up.+A+plan+was+recently+announced+to+gather+many+Pikachu+and+make+an+electric+power+plant.+It%E2%80%99s+in+its+nature+to+store+electricity.+It+feels+stressed+now+and+then+if+it%E2%80%99s+unable+to+fully+discharge+the+electricity.+Its+nature+is+to+store+up+electricity.+Forests+where+nests+of+Pikachu+live+are+dangerous%2C+since+the+trees+are+so+often+struck+by+lightning.+While+sleeping%2C+it+generates+electricity+in+the+sacs+in+its+cheeks.+If+it%E2%80%99s+not+getting+enough+sleep%2C+it+will+be+able+to+use+only+weak+electricity.+This+forest-dwelling+Pok%C3%A9mon+stores+electricity+in+its+cheeks%2C+so+you%E2%80%99ll+feel+a+tingly+shock+if+you+touch+it.+This+forest-dwelling+Pok%C3%A9mon+stores+electricity+in+its+cheeks%2C+so+you%E2%80%99ll+feel+a+tingly+shock+if+you+touch+it.+Its+Gigantamax+power+expanded%2C+forming+its+supersized+body+and+towering+tail.+Pikachu+that+can+generate+powerful+electricity+have+cheek+sacs+that+are+extra+soft+and+super+stretchy.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+different+regions.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+many+different+regions.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+the+Alola+region.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+the+Hoenn+region.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+the+Kalos+region.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+the+Sinnoh+region.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+traveling+through+the+Unova+region.+This+Pikachu+wears+its+partner%E2%80%99s+cap%2C+which+is+brimming+with+memories+of+when+they+first+met.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+a+precious+symbol+of+a+fateful+encounter.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+a+precious+symbol+that+travels+across+different+regions+with+Pikachu.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+across+many+regions+together.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+throughout+the+Alola+region+together.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+throughout+the+Hoenn+region+together.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+throughout+the+Kalos+region+together+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+throughout+the+Sinnoh+region+together.+This+Pikachu+is+wearing+its+Trainer%E2%80%99s+cap.+The+cap+is+proof+that+the+two+traveled+throughout+the+Unova+region+together.+When+Pikachu+meet%2C+they%E2%80%99ll+touch+their+tails+together+and+exchange+electricity+through+them+as+a+form+of+greeting.+When+it+smashes+its+opponents+with+its+bolt-+shaped+tail%2C+it+delivers+a+surge+of+electricity+equivalent+to+a+lightning+strike.
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6061'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.25.1
+    method: POST
+    uri: https://api.funtranslations.com/translate/shakespeare
+  response:
+    body:
+      string: "{\n    \"success\": {\n        \"total\": 1\n    },\n    \"contents\":
+        {\n        \"translated\": \"At which hour several of these pok\xE9mon gather,
+        \ their electricity couldst buildeth and cause lightning storms. At which
+        hour several of these pok\xE9mon gather,  their electricity couldst buildeth
+        and cause lightning storms. 't keeps its tail hath raised to monitor its surroundings.
+        If 't be true thee yank its tail,  'twill tryeth to bite thee. This intelligent
+        pok\xE9mon roasts hard berries with electricity to maketh those folk tender
+        enow to englut. 't raises its tail to check its surroundings. The tail is
+        oft did strike by lightning in this pose. At which hour 't is angered,  't
+        immediately discharges the energy did store in the pouches in its cheeks.
+        Whenever pikachu cometh across something new,  't blasts 't with a jolt of
+        electricity. If 't be true thee cometh across a blackened berry,  't\u2019s
+        evidence yond this pok\xE9mon did misprision the intensity of its charge.
+        This pok\xE9mon hath electricity-storing pouches on its cheeks. These appeareth
+        to becometh electrically did charge during the night while pikachu sleeps.
+        't occasionally discharges electricity at which hour 't is dozy after waking
+        up. 't stores electricity in the electric sacs on its cheeks. At which hour
+        't releases pent-up energy in a did burst,  the electric power is equal to
+        a lightning bolt. 't hath bawbling electric sacs on both its cheeks. If 't
+        be true threatened,  't looses electric charges from the sacs. At which hour
+        several of these pok\xE9mon gather,  their electricity can buildeth and cause
+        lightning storms. 't liveth in forests with others. 't stores electricity
+        in the pouches on its cheeks. If 't be true 't looses crackling power from
+        the electric pouches on its cheeks,  't is being wary. 't occasionally uses
+        an electric shock to recharge a fellow pikachu yond is in a weakened state.
+        This intelligent pok\xE9mon roasts hard berries with electricity to maketh
+        those folk tender enow to englut. 't raises its tail to check its surroundings.
+        The tail is oft did strike by lightning in this pose. 't occasionally uses
+        an electric shock to recharge a fellow pikachu yond is in a weakened state.
+        't occasionally uses an electric shock to recharge a fellow pikachu yond is
+        in a weakened state. 't occasionally uses an electric shock to recharge a
+        fellow pikachu yond is in a weakened state. 't occasionally uses an electric
+        shock to recharge a fellow pikachu yond is in a weakened state. 't raises
+        its tail to check its surroundings. The tail is oft did strike by lightning
+        in this pose. 't hath bawbling electric sacs on both its cheeks. If 't be
+        true threatened,  't looses electric charges from the sacs. Whenever pikachu
+        cometh across something new,  't blasts 't with a jolt of electricity. If
+        't be true thee cometh across a blackened berry,  't\u2019s evidence yond
+        this pok\xE9mon did misprision the intensity of its charge. This pok\xE9mon
+        hath electricity-storing pouches on its cheeks. These appeareth to becometh
+        electrically did charge during the night while pikachu sleeps. 't occasionally
+        discharges electricity at which hour 't is dozy after waking up. A plan wast
+        recently did announce to gather many pikachu and maketh an electric power
+        plant. 't\u2019s in its nature to store electricity. 't doth feel did stress
+        anon and then if 't be true 't\u2019s unable to fully discharge the electricity.
+        Its nature is to store up electricity. Forests whither aeries of pikachu liveth
+        art dangerous,  since the trees art so oft did strike by lightning. While
+        sleeping,  't generates electricity in the sacs in its cheeks. If 't be true
+        't\u2019s not getting enow catch but a wink,  'twill beest able to useth only
+        weak electricity. This forest-dwelling pok\xE9mon stores electricity in its
+        cheeks,  so thee\u2019ll feeleth a tingly shock if 't be true thee touch 't.
+        This forest-dwelling pok\xE9mon stores electricity in its cheeks,  so thee\u2019ll
+        feeleth a tingly shock if 't be true thee touch 't. Its gigantamax power did
+        expand,  forming its supersized corse and towering tail. Pikachu yond can
+        generate powerful electricity hath't cheek sacs yond art extra soft and super
+        stretchy. This pikachu wears its partner\u2019s cap,  which is brimming with
+        memories of traveling through different climatures. This pikachu wears its
+        partner\u2019s cap,  which is brimming with memories of traveling through
+        many different climatures. This pikachu wears its partner\u2019s cap,  which
+        is brimming with memories of traveling through the alola climature. This pikachu
+        wears its partner\u2019s cap,  which is brimming with memories of traveling
+        through the hoenn climature. This pikachu wears its partner\u2019s cap,  which
+        is brimming with memories of traveling through the kalos climature. This pikachu
+        wears its partner\u2019s cap,  which is brimming with memories of traveling
+        through the sinnoh climature. This pikachu wears its partner\u2019s cap,  which
+        is brimming with memories of traveling through the unova climature. This pikachu
+        wears its partner\u2019s cap,  which is brimming with memories of at which
+        hour they first did meet. This pikachu is wearing its trainer\u2019s cap.
+        The cap is a precious symbol of a fateful encounter. This pikachu is wearing
+        its trainer\u2019s cap. The cap is a precious symbol yond travels across different
+        climatures with pikachu. This pikachu is wearing its trainer\u2019s cap. The
+        cap is proof yond the two traveled across many climatures together. This pikachu
+        is wearing its trainer\u2019s cap. The cap is proof yond the two traveled
+        throughout the alola climature together. This pikachu is wearing its trainer\u2019s
+        cap. The cap is proof yond the two traveled throughout the hoenn climature
+        together. This pikachu is wearing its trainer\u2019s cap. The cap is proof
+        yond the two traveled throughout the kalos climature together this pikachu
+        is wearing its trainer\u2019s cap. The cap is proof yond the two traveled
+        throughout the sinnoh climature together. This pikachu is wearing its trainer\u2019s
+        cap. The cap is proof yond the two traveled throughout the unova climature
+        together. At which hour pikachu meeteth,  they\u2019ll touch their tails together
+        and exchange electricity through those folk as a form of greeting. At which
+        hour 't smashes its opponents with its bolt- did shape tail,  't delivers
+        a surge of electricity equivalent to a lightning strike.\",\n        \"text\":
+        \"When several of these POK\xE9MON gather, their electricity could build and
+        cause lightning storms. When several of these POK\xE9MON gather, their electricity
+        could build and cause lightning storms. It keeps its tail raised to monitor
+        its surroundings. If you yank its tail, it will try to bite you. This intelligent
+        POK\xE9MON roasts hard BERRIES with electricity to make them tender enough
+        to eat. It raises its tail to check its surroundings. The tail is sometimes
+        struck by lightning in this pose. When it is angered, it immediately discharges
+        the energy stored in the pouches in its cheeks. Whenever PIKACHU comes across
+        something new, it blasts it with a jolt of electricity. If you come across
+        a blackened berry, it\u2019s evidence that this POK\xE9MON mistook the intensity
+        of its charge. This POK\xE9MON has electricity-storing pouches on its cheeks.
+        These appear to become electrically charged during the night while PIKACHU
+        sleeps. It occasionally discharges electricity when it is dozy after waking
+        up. It stores electricity in the electric sacs on its cheeks. When it releases
+        pent-up energy in a burst, the electric power is equal to a lightning bolt.
+        It has small electric sacs on both its cheeks. If threatened, it looses electric
+        charges from the sacs. When several of these POK\xE9MON gather, their electricity
+        can build and cause lightning storms. It lives in forests with others. It
+        stores electricity in the pouches on its cheeks. If it looses crackling power
+        from the electric pouches on its cheeks, it is being wary. It occasionally
+        uses an electric shock to recharge a fellow PIKACHU that is in a weakened
+        state. This intelligent Pok\xE9mon roasts hard berries with electricity to
+        make them tender enough to eat. It raises its tail to check its surroundings.
+        The tail is sometimes struck by lightning in this pose. It occasionally uses
+        an electric shock to recharge a fellow Pikachu that is in a weakened state.
+        It occasionally uses an electric shock to recharge a fellow Pikachu that is
+        in a weakened state. It occasionally uses an electric shock to recharge a
+        fellow Pikachu that is in a weakened state. It occasionally uses an electric
+        shock to recharge a fellow Pikachu that is in a weakened state. It raises
+        its tail to check its surroundings. The tail is sometimes struck by lightning
+        in this pose. It has small electric sacs on both its cheeks. If threatened,
+        it looses electric charges from the sacs. Whenever Pikachu comes across something
+        new, it blasts it with a jolt of electricity. If you come across a blackened
+        berry, it\u2019s evidence that this Pok\xE9mon mistook the intensity of its
+        charge. This Pok\xE9mon has electricity-storing pouches on its cheeks. These
+        appear to become electrically charged during the night while Pikachu sleeps.
+        It occasionally discharges electricity when it is dozy after waking up. A
+        plan was recently announced to gather many Pikachu and make an electric power
+        plant. It\u2019s in its nature to store electricity. It feels stressed now
+        and then if it\u2019s unable to fully discharge the electricity. Its nature
+        is to store up electricity. Forests where nests of Pikachu live are dangerous,
+        since the trees are so often struck by lightning. While sleeping, it generates
+        electricity in the sacs in its cheeks. If it\u2019s not getting enough sleep,
+        it will be able to use only weak electricity. This forest-dwelling Pok\xE9mon
+        stores electricity in its cheeks, so you\u2019ll feel a tingly shock if you
+        touch it. This forest-dwelling Pok\xE9mon stores electricity in its cheeks,
+        so you\u2019ll feel a tingly shock if you touch it. Its Gigantamax power expanded,
+        forming its supersized body and towering tail. Pikachu that can generate powerful
+        electricity have cheek sacs that are extra soft and super stretchy. This Pikachu
+        wears its partner\u2019s cap, which is brimming with memories of traveling
+        through different regions. This Pikachu wears its partner\u2019s cap, which
+        is brimming with memories of traveling through many different regions. This
+        Pikachu wears its partner\u2019s cap, which is brimming with memories of traveling
+        through the Alola region. This Pikachu wears its partner\u2019s cap, which
+        is brimming with memories of traveling through the Hoenn region. This Pikachu
+        wears its partner\u2019s cap, which is brimming with memories of traveling
+        through the Kalos region. This Pikachu wears its partner\u2019s cap, which
+        is brimming with memories of traveling through the Sinnoh region. This Pikachu
+        wears its partner\u2019s cap, which is brimming with memories of traveling
+        through the Unova region. This Pikachu wears its partner\u2019s cap, which
+        is brimming with memories of when they first met. This Pikachu is wearing
+        its Trainer\u2019s cap. The cap is a precious symbol of a fateful encounter.
+        This Pikachu is wearing its Trainer\u2019s cap. The cap is a precious symbol
+        that travels across different regions with Pikachu. This Pikachu is wearing
+        its Trainer\u2019s cap. The cap is proof that the two traveled across many
+        regions together. This Pikachu is wearing its Trainer\u2019s cap. The cap
+        is proof that the two traveled throughout the Alola region together. This
+        Pikachu is wearing its Trainer\u2019s cap. The cap is proof that the two traveled
+        throughout the Hoenn region together. This Pikachu is wearing its Trainer\u2019s
+        cap. The cap is proof that the two traveled throughout the Kalos region together
+        This Pikachu is wearing its Trainer\u2019s cap. The cap is proof that the
+        two traveled throughout the Sinnoh region together. This Pikachu is wearing
+        its Trainer\u2019s cap. The cap is proof that the two traveled throughout
+        the Unova region together. When Pikachu meet, they\u2019ll touch their tails
+        together and exchange electricity through them as a form of greeting. When
+        it smashes its opponents with its bolt- shaped tail, it delivers a surge of
+        electricity equivalent to a lightning strike.\",\n        \"translation\":
+        \"shakespeare\"\n    }\n}"
+    headers:
+      Cache-Control:
+      - max-age={expires}, pre-check=86400, post-check=43200
+      Connection:
+      - Upgrade, Keep-Alive
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 04 Jul 2021 08:46:19 GMT
+      Expires:
+      - '0'
+      Keep-Alive:
+      - timeout=2, max=100
+      Server:
+      - Apache
+      Transfer-Encoding:
+      - chunked
+      Upgrade:
+      - h2
+      Vary:
+      - Accept,User-Agent
+      X-Auth-Status:
+      - 'true'
+      X-Powered-By:
+      - Luracast Restler v3.0.0rc3
+      X-RateLimit-Limit:
+      - 5 per hour
+      X-RateLimit-Remaining:
+      - '5'
+    status:
+      code: 200
+      message: OK
+version: 1

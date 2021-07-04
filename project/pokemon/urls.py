@@ -1,6 +1,6 @@
 from django.urls import path
 
-from pokemon.api import PokemonAPI
+from pokemon.api import PokemonAPI, PokemonTranslatedAPI
 
 
 urlpatterns = [
@@ -10,8 +10,8 @@ urlpatterns = [
         name="pokemon-api"
     ),
     path(
-        "<str:pokemon_name>", 
-        PokemonAPI.as_view(), 
+        "translated/<str:pokemon_name>", 
+        PokemonTranslatedAPI.as_view(), 
         name="pokemon-translated-api"
     )
 ]

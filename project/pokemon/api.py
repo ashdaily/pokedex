@@ -8,11 +8,28 @@ TRANSLATION_API_URL = settings.TRANSLATION_API_URL
 
 
 class BasePokemonAPI:
+    def _make_response(self, response):
+        habitat = response.json().get("habitat")
+        habitat = habitat.get("name") if habitat else None
+
+        payload = {
+            "name": response.json().get("name"),
+            "is_legendary": response.json().get("is_legendary"),
+            "habitat": habitat,
+            "description": self._get_description(
+                    response.json().get("flavor_text_entries")
+                )
+        }
+        return payload
+
     def _get_description(self, flavor_text_entries):
         """
         Filter english description
         Clean the string by removing escape sequences
         """
+        if len(flavor_text_entries) == 0:
+            return None
+    
         en_descriptions = list(
             map(
                 lambda x:x["flavor_text"] if x["language"]["name"] == "en" else None, 
@@ -32,24 +49,18 @@ class PokemonAPI(APIView, BasePokemonAPI):
     """
 
     def get(self, request, *args, **kwargs):
-        
         pokemon_name = kwargs.get("pokemon_name")
         
         r = requests.get(f"{POKEMON_API_URL}/{pokemon_name}")
-
-        payload = {
-            "name": r.json().get("name"),
-            "is_legendary": r.json().get("is_legendary"),
-            "habitat": r.json().get("habitat", {}).get("name"),
-            "description": self._get_description(
-                    r.json().get("flavor_text_entries")
-                )
-        }
+        if r.ok:
+            payload = self._make_response(r)
+        else:
+            payload = None
         
         return Response(payload, status=r.status_code)
 
 
-class PokemonTranslatedAPI(APIView):
+class PokemonTranslatedAPI(APIView, BasePokemonAPI):
     """
     PATH: /pokemon/translated/<name>
     """
@@ -62,42 +73,41 @@ class PokemonTranslatedAPI(APIView):
         )
         return r
 
+    def _extract_translation(self, response):
+        translation = response.json().get("contents")
+        if translation:
+            return translation.get("translated")
+        else:
+            None
+
     def _make_response(self, r):
-        name = r.json().get("name")
-        is_legendary = r.json().get("is_legendary")
-        habitat = r.json().get("habitat", {}).get("name")
-        description = self._get_description(
-            r.json().get("flavor_text_entries")
-        )
+        payload = super()._make_response(r)
 
-        payload = {
-            "name": name,
-            "is_legendary": is_legendary,
-            "habitat": habitat,
-            "description": description
-        }
-
-        if any(habitat == "cave", is_legendary):
-            # get yoda translation
-            r = self._get_translation(description, type="yoda")
+        if any([payload["habitat"] == "cave", payload["is_legendary"]]):
+            # get yoda translation translated description
+            r = self._get_translation(payload["description"], type="yoda")
             if r.ok:
-                translation = r.json().get("contents", {}).get("translated")
+                translation = self._extract_translation(r)
                 if translation:
                     payload["description"] = translation
                     return payload
 
-        # get shakespeare translation
-        r = self._get_translation(description)
+        # get shakespeare translated description
+        r = self._get_translation(payload["description"])
         if r.ok:
-            translation = r.json().get("contents", {}).get("translated")
+            translation = self._extract_translation(r)
             if translation:
                 payload["description"] = translation
                 return payload
 
+        # send normal description
         return payload
 
     def get(self, request, *args, **kwargs):
         pokemon_name = kwargs.get("pokemon_name")
         r = requests.get(f"{POKEMON_API_URL}/{pokemon_name}")
-        payload = self._make_response(r)
+        if r.ok:
+            payload = self._make_response(r)
+        else:
+            payload = None
         return Response(payload, status=r.status_code)
