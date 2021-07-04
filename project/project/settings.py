@@ -21,7 +21,10 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+if DEBUG:
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 
 # Application definition
@@ -33,6 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # pip packages
+    "drf_yasg",
+    "rest_framework",
+    # project apps
     'pokemon'
 ]
 
@@ -128,3 +135,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Third party urls
 POKEMON_API_URL=env("POKEMON_API_URL")
 TRANSLATION_API_URL=env("TRANSLATION_API_URL")
+
+
+# Media files storage settings
+if DEBUG:
+    # Media files
+    MEDIA_BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    MEDIA_ROOT = os.path.join(MEDIA_BASE, "media")
+    MEDIA_URL = "/media/"

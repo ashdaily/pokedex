@@ -12,7 +12,7 @@ services:
     depends_on:
       - pokemon_db
     ports:
-      - "8000:8000"
+      - "5000:8000"
     volumes:
       - ./project/:/pokemon/project/
     stdin_open: true
