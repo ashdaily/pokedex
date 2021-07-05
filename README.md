@@ -6,7 +6,7 @@
 - [x] check if django user in docker really needed 
 - [x] manage secrets using .env file
 - [x] add tests as per compliance
-- [ ] cache
+- [x] cache
 
 
 ### HOW TO BUILD, SPIN, WATCH LOGS, etc
@@ -68,3 +68,56 @@ docker-compose build --build-arg TARGET_ENV=production backend
 - [ ] add travis CI
 - [ ] do some profiling and load testing
 - [ ] use dependabot for keeping dependencies fresh
+
+
+### Load test results 
+
+- Before using caching (100 requests in total, concurrency=10):
+```
+ash@Ashishs-MacBook-Pro ~> loadtest -n 100 -k -c 10 http://localhost:5000/pokemon/mewtwo
+[Mon Jul 05 2021 07:57:21 GMT+0900 (Japan Standard Time)] INFO Requests: 0 (0%), requests per second: 0, mean latency: 0 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Target URL:          http://localhost:5000/pokemon/mewtwo
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Max requests:        100
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Concurrency level:   10
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Agent:               keepalive
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Completed requests:  100
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Total errors:        0
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Total time:          3.099425439 s
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Requests per second: 32
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Mean latency:        304.7 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO Percentage of the requests served within a certain time
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO   50%      284 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO   90%      428 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO   95%      466 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO   99%      511 ms
+[Mon Jul 05 2021 07:57:24 GMT+0900 (Japan Standard Time)] INFO  100%      511 ms (longest request)
+```
+
+- After using caching (100 requests in total, concurrency=10):
+```
+ash@Ashishs-MacBook-Pro ~> loadtest -n 100 -k -c 10 http://localhost:5000/pokemon/mewtwo
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Requests: 0 (0%), requests per second: 0, mean latency: 0 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Target URL:          http://localhost:5000/pokemon/mewtwo
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Max requests:        100
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Concurrency level:   10
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Agent:               keepalive
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Completed requests:  100
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Total errors:        0
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Total time:          0.660191959 s
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Requests per second: 151
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Mean latency:        61.9 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO Percentage of the requests served within a certain time
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO   50%      24 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO   90%      216 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO   95%      393 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO   99%      407 ms
+[Mon Jul 05 2021 08:46:54 GMT+0900 (Japan Standard Time)] INFO  100%      407 ms (longest request)
+```
+- Using cache has improved the mean latency from 304.7 ms to 61.9 ms which is about 5 times faster. 
+- Using cache has increase number of requests per second handled by system from 32 requests to 151 requests which is 5 times more.

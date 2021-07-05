@@ -25,3 +25,9 @@ services:
       - "5432"
     env_file:
         - ./.env.local
+
+  pokemon_redis:
+    image: redis:alpine3.13
+    container_name: pokemon_redis
+    expose:
+      - "6379"

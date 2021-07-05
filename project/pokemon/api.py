@@ -1,10 +1,14 @@
 from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 import requests
 from rest_framework.views import APIView, Response
 
 
 POKEMON_API_URL = settings.POKEMON_API_URL
 TRANSLATION_API_URL = settings.TRANSLATION_API_URL
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
 class BasePokemonAPI:
@@ -49,7 +53,7 @@ class PokemonAPI(APIView, BasePokemonAPI):
     """
     PATH: /pokemon/<name>
     """
-
+    @method_decorator(cache_page(CACHE_TTL))
     def get(self, request, *args, **kwargs):
         pokemon_name = kwargs.get("pokemon_name")
         
@@ -105,6 +109,7 @@ class PokemonTranslatedAPI(APIView, BasePokemonAPI):
         # send normal description
         return payload
 
+    @method_decorator(cache_page(CACHE_TTL))
     def get(self, request, *args, **kwargs):
         pokemon_name = kwargs.get("pokemon_name")
         r = requests.get(f"{POKEMON_API_URL}/{pokemon_name}")

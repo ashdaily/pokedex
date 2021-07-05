@@ -143,3 +143,19 @@ if DEBUG:
     MEDIA_BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     MEDIA_ROOT = os.path.join(MEDIA_BASE, "media")
     MEDIA_URL = "/media/"
+
+# Redis settings
+REDIS_HOST = os.environ.get('REDIS_HOST', '127.0.0.1')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://{}:{}/1".format(REDIS_HOST, REDIS_PORT),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+DJANGO_REDIS_IGNORE_EXCEPTIONS = True
+DJANGO_REDIS_LOG_IGNORED_EXCEPTIONS = True
+CACHE_TTL = 60 * 60 * 2 # 2 hours

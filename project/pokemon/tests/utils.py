@@ -1,6 +1,7 @@
 import inspect
 import os
 
+from django.core.cache import cache
 from django.test import TestCase
 
 
@@ -12,6 +13,12 @@ __all__ = [
 
 
 class TestCaseBaseClass(TestCase):
+    def tearDown(self):
+        """
+        We don't want to use cache during unit tests.
+        """
+        cache.clear()
+
     def get_cassette(self, name=None):
         """
         Save the cassette in fixtures folder
