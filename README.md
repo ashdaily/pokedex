@@ -3,11 +3,11 @@
 ---
 
 - Pokedex use free pokeapi.co API for searching pokemon related information using pokemon names.
-- :heavy_check_mark Uses django web framework with django rest framework pip package. 
-- :heavy_check_mark Uses docker/docker-compose.
-- :heavy_check_mark Uses redis for caching for dramatically reducing load on third party apis and speed improvement. 
-- :heavy_check_mark Comes with unit tests based on python unit test framework and vcr cassettes for recording request response interactions with pokeapi.co API. 
-- :heavy_check_mark Load tested with [npm loadtest](https://www.npmjs.com/package/loadtest) 
+- ✔️ Uses django web framework with django rest framework pip package. 
+- ✔️ Uses docker/docker-compose.
+- ✔️ Uses redis for caching for dramatically reducing load on third party apis and speed improvement. 
+- ✔️ Comes with unit tests based on python unit test framework and vcr cassettes for recording request response interactions with pokeapi.co API. 
+- ✔️ Load tested with [npm loadtest](https://www.npmjs.com/package/loadtest) 
 
 ---
 
