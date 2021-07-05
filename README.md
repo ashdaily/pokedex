@@ -2,7 +2,7 @@
 
 ---
 
-- Pokedex use free pokeapi.co API for searching pokemon related information using pokemon names.
+- Pokedex uses free pokeapi.co API for searching pokemon related information using pokemon names.
 - ✔️ Uses django web framework with django rest framework pip package. 
 - ✔️ Uses docker/docker-compose.
 - ✔️ Uses redis for caching for dramatically reducing load on third party apis and speed improvement. 
