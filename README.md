@@ -1,13 +1,31 @@
-### MUST DO
+### What is Pokedex ? 
 
 ---
 
-- [x] comply
-- [x] check if django user in docker really needed 
-- [x] manage secrets using .env file
-- [x] add tests as per compliance
-- [x] cache
+- Pokedex use free pokeapi.co API for searching pokemon related information using pokemon names.
+- :heavy_check_mark Uses django web framework with django rest framework pip package. 
+- :heavy_check_mark Uses docker/docker-compose.
+- :heavy_check_mark Uses redis for caching for dramatically reducing load on third party apis and speed improvement. 
+- :heavy_check_mark Comes with unit tests based on python unit test framework and vcr cassettes for recording request response interactions with pokeapi.co API. 
+- :heavy_check_mark Load tested with [npm loadtest](https://www.npmjs.com/package/loadtest) 
 
+---
+
+### Call the API:
+
+---
+
+- Visit [localhost:5000/swagger](http://localhost:5000/swagger/) and try the APIs.
+- Or, Use curl
+```
+# get info for pokemon_name pikachu
+curl -X GET "http://localhost:5000/pokemon/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
+
+# get translated info for pokemon_name pikachu
+curl -X GET "http://localhost:5000/pokemon/translated/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
+```
+
+---
 
 ### HOW TO BUILD, SPIN, WATCH LOGS, etc
 
@@ -23,16 +41,6 @@
 - Run test cases: 
   - `docker-compose run pokemon_container bash -c "cd project &&  python3 manage.py test --no-input"` 
 - Exec: `docker exec -it pokemon-container bash`
-- Call the API:
-  - Visit [localhost:5000/swagger](http://localhost:5000/swagger/) and try the APIs.
-  - Or, Use curl
-  ```
-  # get info for pokemon_name pikachu
-  curl -X GET "http://localhost:5000/pokemon/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
-
-  # get translated info for pokemon_name pikachu
-  curl -X GET "http://localhost:5000/pokemon/translated/pikachu" -H  "accept: application/json" -H  "X-CSRFToken: RRJjriTZY4PEWRjiM0NeW5dbobUSB3Sxpv5SZgZj7aiOmxd79d0TgUyCE0wuKGr3"
-  ```
  
  
 ### You can keep the builds for local, development, testing, staging production seperate: 
@@ -58,6 +66,7 @@ docker-compose build --build-arg TARGET_ENV=staging backend
 docker-compose build --build-arg TARGET_ENV=production backend
 ```
 
+---
 
 ## Production checklist
 
@@ -69,8 +78,11 @@ docker-compose build --build-arg TARGET_ENV=production backend
 - [ ] do some profiling and load testing
 - [ ] use dependabot for keeping dependencies fresh
 
+---
 
 ### Load test results 
+
+---
 
 - Before using caching (100 requests in total, concurrency=10):
 ```
@@ -121,3 +133,15 @@ ash@Ashishs-MacBook-Pro ~> loadtest -n 100 -k -c 10 http://localhost:5000/pokemo
 ```
 - Using cache has improved the mean latency from 304.7 ms to 61.9 ms which is about 5 times faster. 
 - Using cache has increase number of requests per second handled by system from 32 requests to 151 requests which is 5 times more.
+
+---
+
+### NOTES
+
+---
+
+- [x] comply
+- [x] check if django user in docker really needed 
+- [x] manage secrets using .env file
+- [x] add tests as per compliance
+- [x] cache
