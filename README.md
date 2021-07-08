@@ -34,13 +34,33 @@ curl -X GET "http://localhost:5000/pokemon/translated/pikachu" -H  "accept: appl
 - Prerequisites: 
   - Need docker at-least, so please install [docker](https://docs.docker.com/get-docker/)
   - I am assuming you are using Unix like system. 
+
 - Before running the project add `.env.local` file at project root directory and copy contents of `.env.example` file using:
   - `cat .env.example | tee .env.local`. Note that this command might not work properly on Windows, it's better to create `.env.local` by hand.
-- Run the project:
+
+- Run the project (Using `docker-compose`):
   - `docker-compose up`. But remember to add `.env.local` file at project root directory and copy contents of `.env.example` file as already mentioned in the first step. Otherwise the build will fail.
-- Run test cases: 
-  - `docker-compose run pokemon_container bash -c "cd project &&  python3 manage.py test --no-input"` 
-- Exec: `docker exec -it pokemon-container bash`
+
+  - Run test cases:
+    - `docker-compose run pokemon_container bash -c "cd project &&  python3 manage.py test --no-input"` 
+
+- Run the project (Using `docker` commands):
+  - Create a network `docker network create --driver bridge pokemon_network` 
+
+  - Run db `docker run -dit --rm --network pokemon_network --env-file .env.local -p 5432:5432 --name pokemon_db postgres` 
+
+  - Run redis `docker run -dit --rm -p 6379:6379 --network pokemon_network --name pokemon_redis redis:alpine3.13`
+
+  - Build api server `docker build -t pokemon_image .` 
+  - Run api server `docker run -dit --rm -p 5000:8000 --network pokemon_network --volume (pwd)/project:/home/pokemon/project --name pokemon_container pokemon_image` 
+
+  - Run tests, `docker exec -it pokemon_container bash -c "cd project && python3 manage.py test --no-input --keepdb"` 
+
+  - Optional commands, use as per need:
+    - Stop api server `docker container stop pokemon_container` 
+    - Stop db `docker container stop pokemon_db` 
+    - Stop redis `docker container stop pokemon_redis` 
+    - See logs `docker container logs -ft pokemon_container` 
  
  
 ### You can keep the builds for local, development, testing, staging production seperate: 
