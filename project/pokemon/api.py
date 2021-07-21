@@ -56,7 +56,6 @@ class PokemonAPI(APIView, BasePokemonAPI):
     @method_decorator(cache_page(CACHE_TTL))
     def get(self, request, *args, **kwargs):
         pokemon_name = kwargs.get("pokemon_name")
-        
         r = requests.get(f"{POKEMON_API_URL}/{pokemon_name}")
         if r.ok:
             payload = self._make_response(r)
@@ -83,8 +82,7 @@ class PokemonTranslatedAPI(APIView, BasePokemonAPI):
         translation = response.json().get("contents")
         if translation:
             return translation.get("translated")
-        else:
-            None
+        return None
 
     def _make_response(self, r):
         payload = super()._make_response(r)
